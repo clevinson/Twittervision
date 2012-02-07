@@ -18,4 +18,17 @@ The following procesisng libraries are necessary for running Twittervision.  To 
 
 The code is initially set to control Twittervision without an Arduino.  Use the arrow keys to adjust the direction and range of the search location relative to the `homeLat` and `homeLon` variables in the `location.pde` file.
 
-If using an arduino, wire the potentiometer for the range knob to pin 3, and the potentiometer for the antenna to pin 5.  Additionally, you can wire buttons to pin 4 and 7 to control scroll speed adjustment of the twitter stream across the TV.
+
+If using an Arduino, edit the `twittervision.pde` file and uncomment the first 3 commented out lines of the `setup()` function:
+
+```java
+/*  
+  arduino = new Arduino(this, Arduino.list()[0], 57600);
+  arduino.pinMode(speedUpPin, Arduino.INPUT);
+  arduino.pinMode(speedDownPin, Arduino.INPUT);
+*/
+```
+
+as well as the `readArduino()` line in the `draw()` function.
+
+Wire the potentiometer for the range knob to pin 3, and the potentiometer for the antenna to pin 5.  Additionally, you can wire buttons to pin 4 and 7 to control scroll speed adjustment of the twitter stream across the TV.

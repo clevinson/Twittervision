@@ -28,17 +28,18 @@ int masterClock = 0;
 
 
 void setup() {
-  
-  println("the distance between aa and la is "+haversin(homeLat, homeLon, lalat, lalon));
-  
-  println("pottodeg(256) is "+potToDeg(256));
-  
-  createTweetStream();
 /*  
   arduino = new Arduino(this, Arduino.list()[0], 57600);
   arduino.pinMode(speedUpPin, Arduino.INPUT);
   arduino.pinMode(speedDownPin, Arduino.INPUT);
 */
+  
+  println("the distance between aa and la is "+haversin(homeLat, homeLon, lalat, lalon));
+  
+  println("pottodeg(256) is "+potToDeg(256));
+ 
+  createTweetStream();
+
   size(800, 600);
   fs = new SoftFullScreen(this); 
   background(0);
@@ -54,11 +55,11 @@ void setup() {
 }
 
 void draw() {
-
+// readArduino();
+  
   createBackgroundNoise();
   garble2(2);
 
-  //readArduino();
   for(int i=0; i<speed; i++){
     mobsys.tick();
   }
